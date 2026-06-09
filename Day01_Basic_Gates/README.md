@@ -6,3 +6,7 @@ GATE LEVEL SIMULATION
    https://www.edaplayground.com/x/wDdr
    simulation successful
 
+2. AND gate successfully designed in EDA playground
+   https://www.edaplayground.com/x/wDdr
+   simulation successful
+
