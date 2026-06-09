@@ -1,12 +1,18 @@
 day 1 basic_gates practice
 
-GATE LEVEL SIMULATION
+on my 1st day, i theoritically learned the below concepts and simulated succesfully in the EDA playground
 
-1. full adder successfully designed in EDA playground
-   https://www.edaplayground.com/x/wDdr
-   simulation successful
+GATE LEVEL SIMULATIONS
+1.full adder
+2.and gate
+3.or gate
+4.nand gate
+5.nor gate
+6.xor gate
+7.xnor gate
+8.2:1 mux
+9.2:4 encoder
+10.4:2 decoder
 
-2. AND gate successfully designed in EDA playground
-   https://www.edaplayground.com/x/wDdr
-   simulation successful
+
 
