@@ -1,0 +1,6 @@
+reduction AND of 0101 = 0
+reduction OR of 0101 = 1
+reduction NAND of 0101 = 1
+reduction NOR of 0101 = 0
+reduction xOR of 0101 = 0
+reduction xNOR of 0101 = 1
