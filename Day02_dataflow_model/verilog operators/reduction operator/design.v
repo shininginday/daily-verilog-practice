@@ -6,11 +6,11 @@ module reduction_operator;
   
  initial begin
    
-   $display("recudtion AND of %b = %b",a,&a);  
-   $display("recudtion OR of %b = %b",a,|a); 
-   $display("recudtion NAND of %b = %b",a,~&a);  
-   $display("recudtion NOR of %b = %b",a,~|a); 
-   $display("recudtion xOR of %b = %b",a,^a); 
-   $display("recudtion xNOR of %b = %b",a,~^a); 
+   $display("reduction AND of %b = %b",a,&a);  
+   $display("reduction OR of %b = %b",a,|a); 
+   $display("reduction NAND of %b = %b",a,~&a);  
+   $display("reduction NOR of %b = %b",a,~|a); 
+   $display("reduction xOR of %b = %b",a,^a); 
+   $display("reduction xNOR of %b = %b",a,~^a); 
  end  
 endmodule
