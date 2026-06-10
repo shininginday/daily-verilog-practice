@@ -1,0 +1,9 @@
+logical-NOT of 10 = 0
+logical-NOT of 0 = 1
+logical-AND of 10 and 54  = 1
+logical-AND of 54 and 0  = 0
+logical-AND of 54 and Z  = x
+logical-OR of 0 and 0  = 0
+logical-OR of 54 and 0  = 1
+logical-OR of 0 and Z  = x
+logical-OR of 25 and Z  = 1
