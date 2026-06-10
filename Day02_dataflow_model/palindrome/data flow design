@@ -1,0 +1,11 @@
+//3bit palindrome checker uding data flow model
+
+module palindrom(a,b,c,p);
+  input a,b,c;
+  output p;
+  
+  //logic by using continuous assignment
+  assign p = ~(a^c);
+  
+endmodule;
+  
