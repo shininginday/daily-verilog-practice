@@ -1,0 +1,6 @@
+d=0, clk=0, q=x
+d=0, clk=1, q=0
+d=1, clk=1, q=1
+d=0, clk=1, q=0
+d=0, clk=0, q=0
+d=1, clk=0, q=0
