@@ -1,4 +1,6 @@
-// active region and n module jkff(j,k,clk,rst,q);
+// active region and nb region
+
+module jkff(j,k,clk,rst,q);
   input j,k,clk,rst;
   output reg q;
   reg qin;
