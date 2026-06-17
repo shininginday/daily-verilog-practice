@@ -1,0 +1,26 @@
+//with output
+
+module tb;
+initial
+  begin : block1
+    integer count;
+    count = 0;
+    $monitor($time,count);
+    forever
+      begin
+        #5 count = count+1;
+        if(count==8)
+          disable block1;
+      end
+  end
+endmodule
+
+output:            0          0
+                   5          1
+                  10          2
+                  15          3
+                  20          4
+                  25          5
+                  30          6
+                  35          7
+                  40          8
