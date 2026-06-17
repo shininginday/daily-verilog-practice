@@ -1,0 +1,5 @@
+din=00100100, parity=0
+din=10000001, parity=0
+din=00001001, parity=0
+din=01100011, parity=0
+din=00001101, parity=1
