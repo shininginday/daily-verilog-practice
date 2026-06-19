@@ -1,0 +1,12 @@
+T=0                   0 a=0 b=0 out1=x out2=x
+T=0                   1 a=0 b=0 out1=0 out2=x
+T=0                   2 a=0 b=0 out1=0 out2=0
+T=0                  10 a=1 b=0 out1=0 out2=0
+T=0                  12 a=1 b=0 out1=0 out2=1
+T=0                  20 a=1 b=1 out1=0 out2=1
+T=0                  21 a=1 b=1 out1=1 out2=1
+T=0                  22 a=1 b=1 out1=1 out2=z
+T=0                  30 a=0 b=1 out1=1 out2=z
+T=0                  31 a=0 b=1 out1=0 out2=z
+T=0                  40 a=0 b=0 out1=0 out2=z
+T=0                  42 a=0 b=0 out1=0 out2=0
