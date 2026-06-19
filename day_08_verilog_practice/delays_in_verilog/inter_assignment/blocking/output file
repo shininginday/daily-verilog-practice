@@ -1,0 +1,4 @@
+simtime = 0, a=10, b=x
+simtime = 3, a=10, b=10
+simtime = 4, a=15, b=10
+simtime = 7, a=15, b=15
