@@ -1,0 +1,44 @@
+//d-ff
+  
+  module dff(clk,din,q);
+  input clk,din;
+  output reg q;
+  
+  always @(posedge clk)
+    q<=din;
+endmodule
+
+  //tb
+
+  module tb;
+  reg clk,din;
+  wire q;
+  
+  dff d0(clk,din,q);
+  
+  initial 
+    begin
+      clk=0;
+      force d0.q=0;
+      #12 release d0.q;
+      #100 $finish;
+    end
+  
+  
+  initial begin
+    forever
+      begin
+        #10;
+        din=$random;
+      end
+  end
+ 
+  
+  always #5 clk=~clk;
+  
+  initial begin
+    $dumpfile("dump.vcd");
+    $dumpvars(0,clk,din,q);
+  end
+   
+    endmodule
