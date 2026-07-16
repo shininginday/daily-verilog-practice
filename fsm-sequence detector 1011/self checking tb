@@ -1,0 +1,124 @@
+module tb_seq_det_1011;
+  
+  reg clk,rst,din;
+  wire det;
+  integer pass_count;
+  integer fail_count;
+  
+  sequence_det_1011 dut(
+    .clk(clk),
+    .rst(rst),
+    .din(din),
+    .det(det));
+  
+  //clk initialisation
+   initial clk = 0;
+  always #5 clk = ~clk;
+  
+  
+  //waveform
+  initial begin
+  $dumpfile("dump.vcd");
+  $dumpvars(0,clk,rst,din,det);
+  end
+  
+  task send_bit;
+    input b;
+    begin
+      @(posedge clk);
+      #1;
+      din = b;
+    end
+  endtask
+  
+  task check;
+    input exp;
+    input [80*8-1:0] name;
+    begin
+      @(posedge clk);
+      #1;
+      if(det === exp) begin
+        $display("PASS: %0s", name);
+        pass_count = pass_count+1;
+      end
+      else
+        begin
+          $display("fail: %0s | expected=%b, got=%b",name,exp,det);
+          fail_count = fail_count + 1;
+        end
+    end
+  endtask
+  
+  task do_reset;
+    begin
+      rst=1;
+      @(posedge clk);
+      #1;
+      rst=0;
+    end
+  endtask
+  
+  initial begin
+    
+    pass_count =0;
+    fail_count = 0;
+    din =0;
+    
+    do_reset;
+    
+    send_bit(1);
+    send_bit(0);
+    send_bit(1);
+    send_bit(1);
+    check(1, "test1: 1011 detected");
+  
+    do_reset;
+    
+    send_bit(1);
+    send_bit(0);
+    send_bit(1);
+    send_bit(0);
+    check(0, "test2: 1010 not detected");
+    
+    do_reset;
+    
+    send_bit(0);
+    send_bit(0);
+    send_bit(0);
+    send_bit(0);
+    check(0, "test3: 0000 not detected");
+    
+    do_reset;
+    
+    send_bit(0);
+    send_bit(0);
+    send_bit(1);
+    send_bit(0);
+    send_bit(1);
+    send_bit(1);
+    check(1, "test4: noise then 1011");
+    
+    do_reset;
+    
+    send_bit(1);
+    send_bit(1);
+    send_bit(1);
+    send_bit(1);
+    check(0, "test5: 1111 not detected");
+    
+    $display("passed : %0d", pass_count);
+    $display("failed : %0d", fail_count);
+    if(fail_count == 0)
+      $display("all tests passed");
+      else 
+        $display("some tests are failed");
+    #20;
+  end
+endmodule
+  
+  
+  
+  
+  
+  
+  
